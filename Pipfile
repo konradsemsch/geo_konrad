@@ -10,6 +10,7 @@ geopy = "*"
 jupyterlab = "*"
 pandas = "*"
 geo-konrad = {editable = true,path = "."}
+nose = "*"
 
 [requires]
 python_version = "3.7"

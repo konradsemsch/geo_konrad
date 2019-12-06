@@ -11,5 +11,7 @@ setup(name = 'geo_konrad',
       install_requires=[
           'geopy'
       ],
+      test_suite = 'nose.collector',
+      tests_require = ['nose'],
       long_description = open('README.md').read(),
       zip_safe = False)

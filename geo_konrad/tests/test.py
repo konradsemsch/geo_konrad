@@ -1,5 +1,10 @@
 # Here we can include your basic package testing
 
-# from .locate_coordinates import Locate
+from unittest import TestCase
 
-# Locate.locate_coordinates(52.375, 13.667)
+import geo_konrad
+
+class TestLocate(TestCase):
+    def output_is_string(self):
+        out = geo_konrad.locate_coordinates(52.375, 13.667)
+        self.assertTrue(isinstance(out, basestring))
