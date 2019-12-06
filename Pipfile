@@ -9,6 +9,7 @@ verify_ssl = true
 geopy = "*"
 jupyterlab = "*"
 pandas = "*"
+geo-konrad = {editable = true,path = "."}
 
 [requires]
 python_version = "3.7"

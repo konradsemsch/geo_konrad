@@ -8,8 +8,7 @@ setup(name = 'geo_konrad',
       author_email = 'konrad.semsch@gmail.com',
       description = 'An example of how to prepare raw Python code as a package ready for distribution',
       packages = [
-          'pandas',
-          'geopy'
+          'geo_konrad'
       ],
       long_description = open('README.md').read(),
       zip_safe = False)

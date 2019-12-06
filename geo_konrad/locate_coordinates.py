@@ -1,4 +1,4 @@
-import pandas as pd
+
 from geopy.geocoders import Nominatim
 
 class Locate:
@@ -30,11 +30,12 @@ class Locate:
         if (self.latitude or self.longtitude) is None:
             print('Neither of parameters can be empty')
 
-        # if latitude < 0 or latitude > 90:
+        if self.latitude.isdigit() == False or self.longtitude.isdigit() == False:
+            print('Both coordinates need to be numbers')
+
         if self.latitude in range(-90, 90):
             print('Latitude range not allowed')
 
-        # if longtitude < 0 or longtitude > 180:
         if self.longtitude in range(-180, 180):
             print('Longtitude range not allowed')
 
@@ -44,6 +45,5 @@ class Locate:
             coordinates = (self.latitude, self.longtitude)
             location = geolocator.reverse(coordinates,  addressdetails = False)
 
-            # print(pd.isnull(location))
             print('Location details were found: ', location)
             return location
