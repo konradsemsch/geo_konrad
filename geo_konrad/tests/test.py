@@ -7,4 +7,4 @@ import geo_konrad
 class TestLocate(TestCase):
     def output_is_string(self):
         out = geo_konrad.locate_coordinates(52.375, 13.667)
-        self.assertTrue(isinstance(out, basestring))
+        self.assertTrue(isinstance(out, basestring)) # I will expand on this later

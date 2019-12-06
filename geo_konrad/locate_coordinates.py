@@ -34,19 +34,25 @@ def locate_coordinates(latitude, longtitude):
     if isinstance(latitude, float) == False or isinstance(longtitude, float) == False:
         print('Both coordinates need to be float numbers. For example: 50.0')
 
-    if latitude in range(-90, 90):
+    if latitude < -90 or latitude > 90:
         print('Latitude range not allowed')
 
-    if longtitude in range(-180, 180):
+    if longtitude < -180 and longtitude > 180:
         print('Longtitude range not allowed')
 
+    # Proceed if coordinates pass all the checks
     else:
-        # Proceed if coordinates are legit
+        # Define the geolocator and coordinates
         geolocator = Nominatim(user_agent = "my_app")
         coordinates = (latitude, longtitude)
         
-        # Find the location
+    # Check if coordinates point to a location
+    try:
         location = geolocator.reverse(coordinates,  addressdetails = False)
-
         print('Location details were found: ', location)
         return location
+    
+    # Not 100% sure why this isn't working
+    except TypeError as error:
+        print('Location cound not be found')
+        
